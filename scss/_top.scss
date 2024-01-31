@@ -1,0 +1,173 @@
+@use './mixins' as *;
+
+.main-visual {
+  position: relative; //相対位置設定
+
+  img {
+    width: 100%;
+    height: auto; //画面が自然な比率を保つように設定
+  }
+
+  &__text-area {
+    position: absolute; //text-areaに絶対ポジショニングを設定
+    top: 35%; //上から50%の位置に設定
+    left: 50%; // 左から50%の位置
+    transform: translateX(-50%); // X軸方向に自身の幅の50%だけ左に移動
+    width: 900px;
+  }
+
+  &__title {
+    text-align: end;
+
+    p {
+      font-size: 24px;
+      color: var(--color-text);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      -webkit-text-stroke: 1.6px var(--color-text); /* ブラックの輪郭を1pxで指定 */
+      color: transparent; /* テキストの色を透明に */
+      font-family: var(--font-title);
+      font-size: 128px;
+    }
+
+    h3 {
+      font-size: 48px;
+      font-family: var(--font-primary);
+      font-weight: 300;
+      color: var(--color-text);
+      letter-spacing: 4px;
+    }
+  }
+}
+
+.gradetion {
+  height: 100px;
+  background: linear-gradient(to top, var(--color-background) 0%, #d3dae0 100%);
+}
+
+/* ------- WORKS ------- */
+.works {
+  &__content {
+    width: 900px;
+    margin: 0 auto; //左右中央揃え
+    display: flex;
+    justify-content: space-between; //子要素を両端に配置
+  }
+
+  /*&__title,
+  .allview__left,
+  &__content-area {
+    flex: 1; //左側に柔軟な幅を設定
+  }*/
+
+  &.slider {
+    flex: 1; //右側に柔軟な幅を設定
+  }
+
+  .allview__left {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__tag-search {
+    p {
+      font-size: 1rem;
+      position: relative; //子要素の為
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px; // 下線の位置を調整
+        left: 0;
+        width: 100%;
+        height: 1px; // 下線の太さ
+        background: var(--color-line); // 下線の色
+      }
+    }
+  }
+
+  &__tag-wrapper {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); //3列に設定
+    grid-gap: 10px;
+    padding: 0;
+  }
+
+  &__tag {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.25; //20px
+    padding: 5px 10px;
+    text-align: start;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+/* ------- works end ------- */
+
+/* ------- about ------- */
+.about {
+  &__content {
+    width: 900px;
+    margin: 0 auto; //左右中央揃え
+    display: flex; // Flexコンテナとして設定
+    align-items: center; // 子要素を垂直方向の中央に配置
+    justify-content: space-between; // 子要素を水平方向の中央に配置（必要に応じて調整）
+
+    img {
+      width: 400px; // 幅を300pxに設定
+      height: 400px; // 高さを300pxに設定
+      border-radius: 50%; // 角を完全に丸くする
+      object-fit: cover; // 画像が枠に収まるように調整
+      display: block; // ブロックレベル要素として表示
+      margin: 0 60px; // 中央揃え
+    }
+  }
+
+  &__designer-info {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .designer-name-jp {
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 10px;
+    }
+
+    .designer-name-en {
+      font-style: 10px;
+      font-weight: 200;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .designer-desc {
+      font-style: 0.5rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      line-height: 1.7;
+    }
+  }
+
+  &__ascription {
+    width: 900px;
+    margin: 64px auto;
+
+    &-title {
+      margin-bottom: 32px;
+      letter-spacing: 3px;
+    }
+
+    &-desc {
+      line-height: 2;
+      letter-spacing: 2px;
+    }
+  }
+}

@@ -2,9 +2,9 @@
 :root {
   --font-primary: "Open Sans", "Noto Sans JP", "EB Garamond", sans-serif;
   --font-title: "EB Garamond", serif;
-  --color-background: #fafbfb;
   --color-text: #333;
   --color-navline: #747474;
+  --color-arrow: #898989;
   --color-line: #d8f1f5;
   --color-accent: #cd6799;
   --color-button: #62a1ae;
@@ -12,6 +12,8 @@
   --color-contact: #fffeff;
   --easeing: cubic-bezier(0.69, 0.02, 0.18, 1);
   --allview: cubic-bezier(0.24, 0.62, 0.93, 0.6);
+  --container-width: 900px;
+  --color-background: radial-gradient(at 0% 0%, rgb(176, 209, 214) 0px, transparent 50%), radial-gradient(at 0% 50%, rgb(229, 210, 228) 0px, transparent 50%), radial-gradient(at 0% 74%, rgb(176, 209, 214) 0px, transparent 30%), radial-gradient(at 0% 100%, rgb(200, 189, 207) 0px, transparent 50%), radial-gradient(at 40% 30%, rgb(226, 204, 229) 0px, transparent 50%), radial-gradient(at 40% 75%, rgb(203, 211, 223) 0px, transparent 50%), radial-gradient(at 88% 1%, rgb(226, 204, 229) 0px, transparent 50%), radial-gradient(at 80% 50%, rgb(193, 220, 225) 0px, transparent 50%), radial-gradient(at 95% 80%, rgb(200, 189, 207) 0px, transparent 50%), rgb(252, 242, 251);
 }
 
 /* ------- reset ------- */
@@ -62,15 +64,50 @@ ol {
 }
 
 .vertical-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  width: 1em;
+  margin: 20px;
+  position: absolute;
+}
+.vertical-text__vertical {
   writing-mode: vertical-rl;
   text-orientation: upright;
-  font-size: 16px; /* フォントサイズは適宜調整 */
-  white-space: nowrap; /* テキストの折り返しを防ぐ */
-  position: absolute; /* 必要に応じて位置を調整 */
+  white-space: nowrap;
+  padding: 0.1px;
+  letter-spacing: 0.2em;
 }
-
-.section-container {
-  height: 100vh;
+.vertical-text__horizontal {
+  padding: 0.1px;
+  margin: 0.5em;
+  letter-spacing: 0.2em;
+  padding-left: 2rem;
+  writing-mode: horizontal-tb;
+  transform: rotate(90deg);
+  transform-origin: center;
+  white-space: nowrap;
+}
+.vertical-text__cross {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.vertical-text__cross:before, .vertical-text__cross:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5px;
+  height: 14px;
+  background-color: var(--color-text);
+}
+.vertical-text__cross:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.vertical-text__cross:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .section-title {
@@ -78,7 +115,7 @@ ol {
   font-weight: 300;
   letter-spacing: 8px;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--color-contact);
   opacity: 0.6;
 }
 
@@ -108,14 +145,14 @@ ol {
   font-family: "Oxanium", sans-serif;
   font-size: 60px;
   letter-spacing: 5px;
-  color: #c4d8dc;
+  color: var(--color-arrow);
   position: relative;
   display: inline-block;
   visibility: hidden;
 }
 .allview__left a, .allview__right a {
   text-decoration: none;
-  color: #c4d8dc;
+  color: var(--color-arrow);
 }
 .allview__left::after {
   content: "";
@@ -124,17 +161,17 @@ ol {
   position: absolute;
   bottom: 53px;
   right: -43px;
-  background: #c4d8dc;
+  background: var(--color-arrow);
   transform: rotate(70deg);
 }
 .allview__left::before {
   content: "";
   position: absolute;
-  bottom: 21px;
+  bottom: 20px;
   left: 0;
   width: calc(100% + 20px);
   height: 2px;
-  background: #c4d8dc;
+  background: var(--color-arrow);
 }
 .allview__right::after {
   content: "";
@@ -143,17 +180,17 @@ ol {
   position: absolute;
   bottom: 53px;
   left: -43px;
-  background: #c4d8dc;
+  background: var(--color-arrow);
   transform: rotate(-70deg);
 }
 .allview__right::before {
   content: "";
   position: absolute;
-  bottom: 21px;
+  bottom: 20px;
   left: -21px;
   width: calc(100% + 95px);
   height: 2px;
-  background: #c4d8dc;
+  background: var(--color-arrow);
 }
 
 .slide-in__left {
@@ -168,7 +205,7 @@ ol {
 /* ------- ヘッダー ------- */
 .site-header {
   width: 100%;
-  max-width: 900px;
+  max-width: var(--container-width);
   height: 120px;
   margin: 0 auto;
   display: flex;
@@ -266,8 +303,9 @@ ol {
     }
   }
 }*/
+/* ------- Footer ------- */
 .main-visual {
-  position: relative;
+  top: 120px;
 }
 .main-visual img {
   width: 100%;
@@ -278,7 +316,7 @@ ol {
   top: 35%;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
+  width: var(--container-width);
 }
 .main-visual__title {
   text-align: end;
@@ -303,11 +341,12 @@ ol {
   letter-spacing: 4px;
 }
 
+/*
 .gradetion {
   height: 100px;
   background: linear-gradient(to top, var(--color-background) 0%, #d3dae0 100%);
 }
-
+*/
 /* ------- WORKS ------- */
 .works {
   /*&__title,
@@ -317,7 +356,7 @@ ol {
   }*/
 }
 .works__content {
-  width: 900px;
+  width: var(--container-width);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -363,15 +402,15 @@ ol {
 /* ------- works end ------- */
 /* ------- about ------- */
 .about__content {
-  width: 900px;
+  width: var(--container-width);
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .about__content img {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -383,25 +422,25 @@ ol {
   display: flex;
   flex-direction: column;
 }
-.about__designer-info .designer-name-jp {
+.about__designer-info-name-jp {
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 10px;
 }
-.about__designer-info .designer-name-en {
+.about__designer-info-name-en {
   font-style: 10px;
   font-weight: 200;
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
-.about__designer-info .designer-desc {
+.about__designer-info-desc {
   font-style: 0.5rem;
   font-weight: 400;
   letter-spacing: 2px;
   line-height: 1.7;
 }
 .about__ascription {
-  width: 900px;
+  width: var(--container-width);
   margin: 64px auto;
 }
 .about__ascription-title {

@@ -1,9 +1,10 @@
 :root {
   --font-primary: 'Open Sans', 'Noto Sans JP', 'EB Garamond', sans-serif;
   --font-title: 'EB Garamond', serif;
-  --color-background: #fafbfb;
+  //--color-background: #fafbfb;
   --color-text: #333;
   --color-navline: #747474;
+  --color-arrow: #898989;
   --color-line: #d8f1f5;
   --color-accent: #cd6799;
   --color-button: #62a1ae;
@@ -11,4 +12,6 @@
   --color-contact: #fffeff;
   --easeing: cubic-bezier(0.69, 0.02, 0.18, 1);
   --allview: cubic-bezier(0.24, 0.62, 0.93, 0.6);
+  --container-width: 900px;
+  --color-background: radial-gradient(at 0% 0%, rgb(176, 209, 214) 0px, transparent 50%), radial-gradient(at 0% 50%, rgb(229, 210, 228) 0px, transparent 50%), radial-gradient(at 0% 74%, rgb(176, 209, 214) 0px, transparent 30%), radial-gradient(at 0% 100%, rgb(200, 189, 207) 0px, transparent 50%), radial-gradient(at 40% 30%, rgb(226, 204, 229) 0px, transparent 50%), radial-gradient(at 40% 75%, rgb(203, 211, 223) 0px, transparent 50%), radial-gradient(at 88% 1%, rgb(226, 204, 229) 0px, transparent 50%), radial-gradient(at 80% 50%, rgb(193, 220, 225) 0px, transparent 50%), radial-gradient(at 95% 80%, rgb(200, 189, 207) 0px, transparent 50%), rgb(252, 242, 251);
 }

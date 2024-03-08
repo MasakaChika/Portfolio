@@ -41,3 +41,12 @@ function animateOnScroll() {
 
 // スクロールイベントに関数をバインド
 window.addEventListener('scroll', animateOnScroll);
+
+/* ------- copyright year ------- */
+const year = document.querySelector('#year');
+const date = new Date();
+year.textContent = date.getFullYear();
+
+console.log(date.getFullYear()); //年を取得
+console.log(date.getDay()); //曜日を取得
+console.log(date.getHours()); //時を取得

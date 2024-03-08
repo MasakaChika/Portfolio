@@ -1,15 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Webデザイナーを目指す眞坂チカのポートフォリオサイトです。日々の学習による作品を展示。学習中のため、就職活動用に制作しました。" />
+    <meta name="description" content="Webデザイナーを目指す眞坂千佳のポートフォリオサイトです。日々の学習による作品を展示。学習中のため、就職活動用に制作しました。" />
     <title>MasakaChika Portfolio Site</title>
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=EB+EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon.ico/apple-touch-icon.png" />
@@ -24,59 +26,81 @@
   </head>
 
   <body>
-    <!-- header -->
+    <!-- header & nav -->
     <header class="site-header">
-      <h1 class="site-header__logo">
-        <a href="#">
-          <img src="./img/masakachika_logo.png" alt="ロゴ" />
-        </a>
-      </h1>
+      <!-- logo&nav -->
+      <!-- pc -->
+      <div class="site-header__pc">
+        <h1 class="site-header__logo">
+          <a href="#">
+            <img src="./img/masakachika_logo.png" alt="ロゴ" />
+          </a>
+        </h1>
+      </div>
+      <!-- /.pc -->
+      <!-- sp -->
+      <div class="site-header__sp">
+        <h1 class="site-header__logo">
+          <a href="#">
+            <img src="./img/logo-sp.png" alt="masakachikaのロゴ" />
+          </a>
+        </h1>
+        <ul>
+          <li><a href="#works">works</a></li>
+          <li><a href="#about">about</a></li>
+        </ul>
+      </div>
+      <!-- /.sp -->
+      <!-- checkbox -->
+      <div class="hamburger-menu">
+        <input type="checkbox" id="nav-toggle" class="site-nav-checkbox" />
+        <label for="nav-toggle" class="site-nav-toggle">
+          <span></span>
+        </label>
 
-      <input type="checkbox" id="nav-toggle" class="site-nav-checkbox" />
-      <label for="nav-toggle" class="site-nav-toggle">
-        <span></span>
-      </label>
-
-      <!-- navigation -->
-      <div class="site-header__nav-container site-nav-container">
-        <nav class="site-nav-container__nav">
-          <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="#">works</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">contact</a></li>
-          </ul>
-        </nav>
-        <div class="site-nav-container__sns">
-          <a href="https://www.instagram.com/masaka_chika/" target="_blank"><img src="./img/instagram.png" alt="instagram" /></a>
-          <a href="https://twitter.com/masaka_chika" target="_blank"><img src="./img/x-icon.png" alt="x" /></a>
+        <!-- /.checbox -->
+        <div class="site-nav-container">
+          <nav class="site-nav-container__nav">
+            <ul>
+              <li><a href="#home">home</a></li>
+              <li><a href="#works">works</a></li>
+              <li><a href="#about">about</a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </nav>
+          <div class="site-nav-container__sns">
+            <a href="https://www.instagram.com/masaka_chika/" target="_blank"><img src="./img/instagram.png" alt="instagram" /></a>
+            <a href="https://twitter.com/masaka_chika" target="_blank"><img src="./img/x-icon.png" alt="x" /></a>
+          </div>
         </div>
       </div>
-      <!-- /.navigation-->
+      <!-- /.logo&nav-->
     </header>
     <!-- /.header -->
 
     <main>
       <!-- main-visual -->
-      <section class="main-visual">
-        <!-- 		
-       <img src="./img/mv.webp" alt="" />
-			  -->
-        <div class="main-visual__text-area">
-          <div class="main-visual__title">
-            <p>
-              I want to grow as a web designer<br />
-              - who maintains a balanced focus on both design and coding.
-            </p>
-            <h2>Masaka Chika</h2>
-            <h3>Protfolio Site</h3>
+      <section class="main-visual" id="home">
+        <!-- pc  -->
+        <div class="main-visual__pc">
+          <div class="main-visual__text-area">
+            <div class="main-visual__title">
+              <p>
+                I want to grow as a web designer<br />
+                - who maintains a balanced focus on both design and coding.
+              </p>
+              <h2>Masaka Chika</h2>
+              <h3>Protfolio Site</h3>
+            </div>
           </div>
         </div>
+        <!-- /.pc -->
       </section>
       <!-- /.main visual -->
 
       <!-- works -->
-      <section class="section-container works">
+      <section class="section-container works" id="works">
+        <!-- vartical text -->
         <div class="vertical-text">
           <span class="vertical-text__vertical">作品集</span>
           <span class="vertical-text__cross"></span>
@@ -85,34 +109,41 @@
         <!-- /.vartical text -->
 
         <div class="works__content">
+          <!-- works serch tag-->
           <div class="works__content-area">
-            <h2 class="section-title">works</h2>
+            <h2 class="section-title cormorant-infant-semibold">works</h2>
             <p class="allview__left"><a href="">All View</a></p>
             <div class="works__tag-search">
-              <p>タグ検索</p>
+              <p>検索</p>
               <ul class="works__tag-wrapper">
-                <li class="works__tag"><a href="">#バナー</a></li>
-                <li class="works__tag"><a href="">#デザイン</a></li>
-                <li class="works__tag"><a href="">#ロゴ</a></li>
-                <li class="works__tag"><a href="">#HTML</a></li>
-                <li class="works__tag"><a href="">#CSS</a></li>
-                <li class="works__tag"><a href="">#JavaScript</a></li>
-                <li class="works__tag"><a href="">#WordPress</a></li>
-                <li class="works__tag"><a href="">#illustrator</a></li>
-                <li class="works__tag"><a href="">#Photoshop</a></li>
-                <li class="works__tag"><a href="">#Figma</a></li>
-                <li class="works__tag"><a href="">#Bootstrap</a></li>
-                <li class="works__tag"><a href="">#Scss</a></li>
+                <li class="works__tag"><a href="">Design</a></li>
+                <li class="works__tag"><a href="">Coding</a></li>
+                <li class="works__tag"><a href="">Banner</a></li>
+                <li class="works__tag"><a href="">Logo</a></li>
+                <li class="works__tag"><a href="">Icon</a></li>
+                <li class="works__tag"><a href="">HTML+CSS</a></li>
+                <li class="works__tag"><a href="">JavaScript</a></li>
+                <li class="works__tag"><a href="">WordPress</a></li>
+                <li class="works__tag"><a href="">illustrator</a></li>
+                <li class="works__tag"><a href="">Photoshop</a></li>
+                <li class="works__tag"><a href="">Figma</a></li>
+                <li class="works__tag"><a href="">Bootstrap</a></li>
               </ul>
             </div>
           </div>
-          <div class="slider"></div>
+          <!-- /.works serch tag -->
+
+          <!-- works thumbnail -->
+          <div class="works__thumbnail">
+            <img src="/img/mv-image.jpg" alt="Dummy" width="600px" height="400px" />
+          </div>
+          <!-- /.works thumbnail -->
         </div>
       </section>
       <!-- /.works -->
 
       <!-- about -->
-      <section class="section-container about">
+      <section class="section-container about" id="about">
         <!-- vartical-text -->
         <div class="vertical-text">
           <span class="vertical-text__vartical">私について</span>
@@ -120,27 +151,37 @@
           <span class="vertical-text__horizontal">ABOUT</span>
         </div>
         <!-- /.vartical text -->
+
         <div class="about__content">
+          <!-- about left -->
           <img src="./img/masakachika.jpg" alt="" />
+          <!-- /.about left -->
+
+          <!-- about right -->
           <div class="area">
-            <h2 class="section-title">about</h2>
+            <h2 class="section-title cormorant-infant-semibold">about</h2>
             <p class="allview__right"><a href="">All View</a></p>
             <p class="about__designer-info">
-              <span class="about__designer-name-jp">眞坂チカ</span>
+              <span class="about__designer-name-jp">眞坂千佳</span>
               <span class="about__designer-name-en">Masaka Chika</span>
-              <span class="about__designer-desc"> 歯科衛生士として18年ほど従事、2023年10月より職業訓練校に通う、Webデザイナー・コーダー志望。 </span>
+              <span class="about__designer-desc"> 歯科衛生士として18年ほど従事、2023年10月よりインタープランITスクールでWebデザインを学ぶ、Webデザイナー・コーダー志望。 </span>
             </p>
           </div>
+          <!-- /.about right -->
         </div>
-        <div class="about__ascription">
-          <h3 class="about__ascription-title">シンプルながらも深みのあるデザインで、あなたの物語を語りたい</h3>
-          <p class="about__ascription-desc">デザインは、コミュニケーションの手段のひとつで。ときに言葉以上の力を持つことがあると考えます。<br />私はその力を引き出し、クライアントのビジョンを視覚的な言語で伝えたいと思いデザイナーを目指しました。<br />目を引くだけではなく、訪れた人々に深い印象を残し、人に優しく伝わりやすい、そして直観的かつ効率的に必要とする情報を得られるよう設計したいと心がけています。</p>
+        <!-- about msg -->
+        <div class="about__msg">
+          <h3 class="about__msg-title">シンプルながらも深みのあるデザインで、あなたの物語を語りたい</h3>
+          <p class="about__msg-desc">私は歯科衛生士として歯科医院や専門学校にて従事していました。<br />患者さんの健康の維持増進、学生に対する授業などたくさんの場面で、「どのように伝えるか」を課題にしてきました。<br />そのなかで、改めてデザインはコミュニケーションの手段のひとつであることを実感しました。<br />視覚的に整理された情報で明確な目的を設定したうえで課題解決をする、まさにデザインの定義です。<br />「デザイン」は、ときに言葉以上の力を持つことがあると考えます。<br />視覚的な工夫により、分かりやすいといわれることが喜びとなり、それらがきっかけとなりデザイナーを目指すようになりました。<br /><br /><b>目を引くだけではなく、訪れた人々に深い印象を残し、人に優しく伝わりやすい、そして直観的かつ効率的に、必要とする情報を得られるよう設計したいと心がけています。</b></p>
         </div>
+        <!-- /.about msg-->
       </section>
-      <!-- /.about -->
     </main>
+
     <!-- footer -->
-    <footer></footer>
+    <footer class="site-footer">
+      <small class="cormorant-infant-semibold">&copy; <span id="year"></span> MasakaChika All rights reserved.</small>
+    </footer>
     <!-- /.footer -->
     <script src="./js/script.js"></script>
   </body>
